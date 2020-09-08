@@ -4,6 +4,20 @@ body {
     color: #404040;
 }
 
+.lda_matrices table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.lda_matrices th, .lda_matrices td {
+  text-align: left;
+  padding: 8px;
+}
+
+.lda_matrices tr:nth-child(even){background-color: #f2f2f2}
+
 .ldacontainer {
 	padding-right: 15px;
     padding-left: 15px;
@@ -15,7 +29,21 @@ body {
 
 img {
 	float:left;
-	width: 300px;
-	height: 200px;
+	width: 370px;
+	height: 165px;
 	padding: 15px;
+}
+
+.lda_architecture, .lda_dataset {
+	width: 100%;
+}
+.lda_pic {
+	float: left;
+	width: 35%;
+	height: auto;
+}
+.lda_des {
+	float: left;
+	width: 65%;
+	height: auto;
 }
