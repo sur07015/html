@@ -11,35 +11,71 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>Topic modeling is an unsupervised technique based statistical modeling used to unveil the core “topics” from a large volume of textual documents. Latent Dirichlet allocation (LDA), proposed by J. K. Pritchard, M. Stephens and P. Donnelly  is such a topic model that generates topics based on word frequency from set of given documents. It is based upon two assumptions: First, documents with similar words belong to the same topic. Second, documents with groups of words together appear in different documents belongs to the same topic.</p>
+					
+					<div class='lda_architecture'>
+						<h2>LDA architecture</h2>
+						
+						<div class='lda_pic'>
+							<img src="lda_model.png">
+						</div>
+						
+						<div class='lda_des'>
+							<p>Figure is known as a plate diagram of an LDA model where:</p>
+							<ul>
+							  <li>α is the per-document topic distributions</li>
+							  <li>β is the per-topic word distribution</li>
+							  <li>θ is the topic distribution for document m</li>
+							  <li>φ is the word distribution for topic k</li>
+							  <li>z is the topic for the n-th word in document m</li>
+							  <li>w is the specific word</li>
+							</ul>
+						</div>
+					</div>
 
-                    <h2>LDA architecture</h2>
-			<img src="lda_model.png">
+					</br>
+					</br>
+					
+					<div class='lda_dataset'>
+						<h2>Prepare the dataset</h2>
+						<p>Data preprocessing is the most important part to get the desired result. Dataset contains xxx rows with xxx words (including special characters, numbers). Below given steps are the most common methods in natural language processing.</p>
+						<div class='lda_dataset_preprocess'>
+							<ul>
+								<li>Remove common words.</li>
+								<li>Tokenization: Split the text into sentences and the sentences into words.</li>
+								<li>Lowercase the words and remove punctuation.</li>
+								<li>Words that have fewer than 3 characters are removed.</li>
+								<li>All stopwords are removed.</li>
+								<li>Words are lemmatized.</li>
+							</ul>
+						</div>
+					</div>
 
-			<ul>
-			  <li>α is the per-document topic distributions</li>
-			  <li>β is the per-topic word distribution</li>
-			  <li>θ is the topic distribution for document m</li>
-			  <li>φ is the word distribution for topic k</li>
-			  <li>z is the topic for the n-th word in document m</li>
-			  <li>w is the specific word</li>
-			</ul>
-
-
-			
-                    <h2 class="section-heading">Reaching for the Stars</h2>
-
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-                    <a href="#">
-                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-                    </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+					<div class="lda_implementation">
+						<h2>Implementation</h2>
+						<p>For LDA topic modeling, we have created a dictionary and a corpus by using Gensim library. Gensim assign unique id for each word (i.e.. (0,1) means word id 0 occurs 1 in the first document). Now we trained the LDA model.</p>
+						<p>After getting an LDA trained model, we don’t have a prior idea for how many topics the trained model will perform best. So Topic coherence is one of the main techniques used to estimate the number of topics. We have used UMass and c_v measures to get the coherence score.</p>
+						<div class="lda_matrices" style="overflow-x:auto;">
+							<table>
+								<tr>
+									<th>Matrices</th>
+									<th>Coherence Score</th>
+									<th>Optimal topics</th>								  
+								</tr>
+								<tr>
+									<td>C_V</td>
+									<td>50</td>
+									<td>50</td>								  
+								</tr>
+								<tr>
+									<td>UMass</td>
+									<td>94</td>
+									<td>50</td>								  
+								</tr>
+							</table>
+							<img src='lda_model.png'>
+						</div>
+					</div>
+				
                 </div>
             </div>
         </div>
